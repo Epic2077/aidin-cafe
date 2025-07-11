@@ -1,0 +1,21 @@
+{
+  "name": "Aidin Cafe",
+  "short_name": "Aidin Cafe",
+  "description": "کافه رستوران آیدین در قلب شیراز",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#E3D0B2",
+  "theme_color": "#E3D0B2",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
