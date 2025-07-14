@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Noto_Nastaliq_Urdu } from "next/font/google";
+import { Geist, Noto_Nastaliq_Urdu, Vazirmatn } from "next/font/google";
 import "./globals.css";
+import ScrollAnimationProvider from "@/components/ScrollAnimationProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -9,6 +10,10 @@ const geistSans = Geist({
 
 const nastaliq = Noto_Nastaliq_Urdu({
   variable: "--font-nastaliq",
+  subsets: ["arabic"],
+});
+const vazir = Vazirmatn({
+  variable: "--font-vazir",
   subsets: ["arabic"],
 });
 
@@ -96,7 +101,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${nastaliq.variable} antialiased relative min-h-screen overflow-x-hidden`}
+        className={`${geistSans.variable} ${nastaliq.variable} ${vazir.variable} antialiased relative min-h-screen overflow-x-hidden`}
       >
         {/* Left side decoration */}
         <div
@@ -120,7 +125,10 @@ export default function RootLayout({
           }}
           aria-hidden="true"
         ></div>
-        <main className="relative z-10">{children}</main>
+        <main className="relative z-10">
+          <ScrollAnimationProvider />
+          {children}
+        </main>
       </body>
     </html>
   );
