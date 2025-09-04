@@ -4,6 +4,7 @@ import "./globals.css";
 import ScrollAnimationProvider from "@/components/ScrollAnimationProvider";
 import { LanguageProvider } from "@/context/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -189,6 +190,7 @@ export default function RootLayout({
           <main className="relative z-10">
             <ScrollAnimationProvider />
             {children}
+            <Analytics />
           </main>
         </LanguageProvider>
       </body>
