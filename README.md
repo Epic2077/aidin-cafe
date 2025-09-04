@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aidin Cafe | کافه رستوران آیدین
 
-## Getting Started
+You can view the website here: [Aidin Cafe](https://aidin-cafe.vercel.app/)
 
-First, run the development server:
+Welcome to the official website of **Aidin Cafe** (کافه رستوران آیدین) — a unique cafe and restaurant located in the heart of Shiraz, Iran. This project is built with [Next.js](https://nextjs.org), fully multilingual (Persian & English), SEO-optimized, and mobile-friendly.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌟 About Aidin Cafe
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Aidin Cafe offers a blend of traditional and modern flavors in a historic Qajar-era building. Whether you’re looking for a relaxing cafe experience or a delicious meal, Aidin Cafe promises a memorable journey full of taste and tradition.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Address:** Lotfali Zand St - Nasir al-Mulk Mosque - Aidin Emarat, Shiraz, Iran
+- **Instagram:**
+- **Phone:** [Add your phone number here]
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Features
 
-## Learn More
+- Multilingual: Persian (Farsi) & English
+- Fully responsive and mobile-first design
+- SEO optimized (meta tags, Open Graph, JSON-LD, sitemap, robots.txt)
+- Fast performance with Next.js and optimized images
+- Animated, modern UI with smooth transitions
+- Google Maps integration for location
+- Accessible and semantic HTML
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Getting Started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+2. **Run the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🗺️ SEO & Discoverability
 
-## Deploy on Vercel
+- All pages include unique meta tags, Open Graph, Twitter Card, and JSON-LD structured data for LocalBusiness.
+- Sitemap and robots.txt are included for search engine indexing.
+- Alternate language links (`hreflang`) for both Persian and English.
+- Canonical URLs to prevent duplicate content.
+- All images use descriptive `alt` attributes.
+- Content is written with relevant keywords for "Cafe in Shiraz", "کافه شیراز", "Traditional Restaurant Shiraz", and more.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📦 Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploy easily on [Vercel](https://vercel.com/) or any Node.js hosting. For best SEO, set your production domain in `next.config.js` and update all URLs in the code and metadata.
+
+## 🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+## 📄 License
+
+[MIT](LICENSE)
+
+---
+
+> **Aidin Cafe** | Shiraz, Iran — Authentic taste, modern experience. کافه رستوران آیدین، طعم اصیل، تجربه مدرن.
