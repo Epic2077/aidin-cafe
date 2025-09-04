@@ -31,8 +31,12 @@ const translations = {
 const Address = () => {
   const { language } = useLanguage();
   const t = translations[language];
+  const isFa = language === "fa";
   return (
-    <div className="w-[95%] sm:w-[90%] md:w-[85%] lg:w-[75%] border-2 rounded-2xl mx-auto flex flex-col items-center p-3 sm:p-4 md:p-5 my-6 sm:my-8 md:my-10 mt-10 sm:mt-15 md:mt-20">
+    <div
+      dir={isFa ? "rtl" : "ltr"}
+      className="w-[95%] sm:w-[90%] md:w-[85%] lg:w-[75%] border-2 rounded-2xl mx-auto flex flex-col items-center p-3 sm:p-4 md:p-5 my-6 sm:my-8 md:my-10 mt-10 sm:mt-15 md:mt-20"
+    >
       <h2 className="text-xl sm:text-2xl md:text-3xl mb-6 sm:mb-8 md:mb-10 lg:mb-15 text-center">
         {t.title}
       </h2>
@@ -46,23 +50,39 @@ const Address = () => {
         className="rounded-2xl w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px]"
       ></iframe>
       <div className="w-full mt-10 space-y-10 sm:space-y-7 md:space-y-8 sm:mt-10 md:mt-10 px-2 sm:px-4 md:px-6">
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-center lg:text-right">
+        <p
+          className={`text-sm sm:text-base md:text-lg lg:text-xl text-center ${
+            isFa ? "lg:text-right" : "lg:text-left"
+          }`}
+        >
           <span className="pl-2 text-[#13888C] font-bold">
             {t.addressLabel}
           </span>{" "}
           {t.address}
         </p>
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-center lg:text-right">
+        <p
+          className={`text-sm sm:text-base md:text-lg lg:text-xl text-center ${
+            isFa ? "lg:text-right" : "lg:text-left"
+          }`}
+        >
           <span className="pl-2 text-[#13888C] font-bold">{t.phoneLabel}</span>{" "}
           {t.phone}
         </p>
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-center lg:text-right">
+        <p
+          className={`text-sm sm:text-base md:text-lg lg:text-xl text-center ${
+            isFa ? "lg:text-right" : "lg:text-left"
+          }`}
+        >
           <span className="pl-2 text-[#13888C] font-bold">
             {t.instagramLabel}
           </span>{" "}
           {t.instagram}
         </p>
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-center lg:text-right mb-5">
+        <p
+          className={`text-sm sm:text-base md:text-lg lg:text-xl text-center ${
+            isFa ? "lg:text-right" : "lg:text-left"
+          } mb-5`}
+        >
           <span className="pl-2 text-[#13888C] font-bold">
             {t.scheduleLabel}
           </span>{" "}

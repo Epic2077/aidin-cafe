@@ -24,11 +24,11 @@ export const metadata: Metadata = {
   description: "کافه رستوران آیدین در قلب شیراز",
   keywords: [
     "کافه",
-    "رستوران",
+    "عمارت",
     "آیدین",
     "شیراز",
     "cafe",
-    "restaurant",
+    "Emarat",
     "Aidin",
     "Shiraz",
   ],
@@ -40,14 +40,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://aidincafe.com"), // Replace with your actual domain
+  metadataBase: new URL("https://aidin-cafe.vercel.app/"), // Replace with your actual domain
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Aidin Cafe - کافه رستوران آیدین",
     description: "کافه رستوران آیدین در قلب شیراز",
-    url: "https://aidincafe.com", // Replace with your actual domain
+    url: "https://aidin-cafe.vercel.app/", // Replace with your actual domain
     siteName: "Aidin Cafe",
     locale: "fa_IR",
     type: "website",
@@ -90,8 +90,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // SSR fallback: default to fa
+  let language = "fa";
+  if (typeof window !== "undefined") {
+    try {
+      language = window.localStorage.getItem("language") || "fa";
+    } catch {}
+  }
+  const dir = language === "fa" ? "rtl" : "ltr";
   return (
-    <html lang="fa" dir="rtl">
+    <html lang={language} dir={dir}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#E3D0B2" />
@@ -104,6 +112,51 @@ export default function RootLayout({
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
+        />
+        {/* Alternate language links for SEO */}
+        <link
+          rel="alternate"
+          href="https://aidin-cafe.vercel.app//"
+          hrefLang="fa"
+        />
+        <link
+          rel="alternate"
+          href="https://aidin-cafe.vercel.app//en"
+          hrefLang="en"
+        />
+        <link
+          rel="alternate"
+          href="https://aidin-cafe.vercel.app//"
+          hrefLang="x-default"
+        />
+        {/* JSON-LD LocalBusiness schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `{
+          \"@context\": \"https://schema.org\",
+          \"@type\": \"Restaurant\",
+          \"name\": \"Aidin Cafe\",
+          \"image\": \"https://aidin-cafe.vercel.app/_next/image?url=%2Ffirst-image.png&w=1200&q=75\",
+          \"@id\": \"https://aidin-cafe.vercel.app/\",
+          \"url\": \"https://aidin-cafe.vercel.app/\",
+          \"telephone\": \"\u200c\",
+          \"address\": {
+            \"@type\": \"PostalAddress\",
+            \"streetAddress\": \"Lotfali Zand St - Nasir al-Mulk Mosque - Aidin Emarat\",
+            \"addressLocality\": \"Shiraz\",
+            \"addressCountry\": \"IR\"
+          },
+          \"geo\": {
+            \"@type\": \"GeoCoordinates\",
+            \"latitude\": \"29°36'30.3\",
+            \"longitude\": \"52°32'56.9\"
+          },
+          \"sameAs\": [
+            \"https://www.instagram.com/your_instagram\"
+          ]
+        }`,
+          }}
         />
       </head>
       <body

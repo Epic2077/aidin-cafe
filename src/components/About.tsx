@@ -24,8 +24,12 @@ const translations = {
 const About = () => {
   const { language } = useLanguage();
   const t = translations[language];
+  const isFa = language === "fa";
   return (
-    <div className="w-full flex flex-col justify-center mt-10 sm:mt-15 md:mt-20 px-4 sm:px-6 md:px-8">
+    <div
+      dir={isFa ? "rtl" : "ltr"}
+      className="w-full flex flex-col justify-center mt-10 sm:mt-15 md:mt-20 px-4 sm:px-6 md:px-8"
+    >
       <Image
         src={"/first-image.png"}
         alt="first-image"
@@ -46,17 +50,15 @@ const About = () => {
             className="rounded-xl w-[280px] sm:w-[350px] md:w-[400px] lg:w-[450px] h-auto"
           />
         </div>
-        <div className="flex flex-col justify-evenly lg:ml-auto lg:mr-20 fade-in-scroll-left space-y-4 lg:space-y-6">
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-center lg:text-right">
-            {t.p1}
-          </p>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-center lg:text-right">
-            {t.p2}
-          </p>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-center lg:text-right">
-            {t.p3}
-          </p>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-center lg:text-right">
+        <div
+          className={`flex flex-col mx-5 justify-evenly lg:ml-10 lg:mr-20 fade-in-scroll-left space-y-4 lg:space-y-6 ${
+            isFa ? "text-right" : "text-left"
+          }`}
+        >
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl">{t.p1}</p>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl">{t.p2}</p>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl">{t.p3}</p>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-5">
             {t.p4}
           </p>
         </div>
