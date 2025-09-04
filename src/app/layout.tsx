@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Noto_Nastaliq_Urdu, Vazirmatn } from "next/font/google";
 import "./globals.css";
 import ScrollAnimationProvider from "@/components/ScrollAnimationProvider";
+import { LanguageProvider } from "@/context/LanguageContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -94,6 +96,10 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#E3D0B2" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <meta
+          name="google-site-verification"
+          content="1VZgz9ZZXI3xl_O-GD6Rww9IPjzdETFFXx0SLx--xpA"
+        />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
@@ -103,32 +109,35 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${nastaliq.variable} ${vazir.variable} antialiased relative min-h-screen overflow-x-hidden`}
       >
-        {/* Left side decoration */}
-        <div
-          className="fixed top-0 left-0 h-full w-[150px] hidden md:block z-0 animate-fade-in-left"
-          style={{
-            backgroundImage: "url(/left-decoration.png)",
-            backgroundRepeat: "repeat-y",
-            backgroundPosition: "left center",
-            backgroundSize: "contain",
-          }}
-          aria-hidden="true"
-        ></div>
-        {/* Right side decoration */}
-        <div
-          className="fixed top-0 right-0 h-full w-[150px] hidden md:block z-0 animate-fade-in-right"
-          style={{
-            backgroundImage: "url(/right-decoration.png)",
-            backgroundRepeat: "repeat-y",
-            backgroundPosition: "right center",
-            backgroundSize: "contain",
-          }}
-          aria-hidden="true"
-        ></div>
-        <main className="relative z-10">
-          <ScrollAnimationProvider />
-          {children}
-        </main>
+        <LanguageProvider>
+          {/* Left side decoration */}
+          <div
+            className="fixed top-0 left-0 h-full w-[150px] hidden md:block z-0 animate-fade-in-left"
+            style={{
+              backgroundImage: "url(/left-decoration.png)",
+              backgroundRepeat: "repeat-y",
+              backgroundPosition: "left center",
+              backgroundSize: "contain",
+            }}
+            aria-hidden="true"
+          ></div>
+          {/* Right side decoration */}
+          <div
+            className="fixed top-0 right-0 h-full w-[150px] hidden md:block z-0 animate-fade-in-right"
+            style={{
+              backgroundImage: "url(/right-decoration.png)",
+              backgroundRepeat: "repeat-y",
+              backgroundPosition: "right center",
+              backgroundSize: "contain",
+            }}
+            aria-hidden="true"
+          ></div>
+          <LanguageSwitcher />
+          <main className="relative z-10">
+            <ScrollAnimationProvider />
+            {children}
+          </main>
+        </LanguageProvider>
       </body>
     </html>
   );
