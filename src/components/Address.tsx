@@ -9,7 +9,7 @@ const translations = {
     addressLabel: "آدرس عمارت:",
     address: "خیابان لطفعلی زند - مسجد نصیر الملک - عمارت آیدین",
     phoneLabel: "شماره تلفن:",
-    phone: "+98 9334896083",
+    phone: "09338484796",
     instagramLabel: "اینستاگرام:",
     instagram: "emarat_aidin",
     scheduleLabel: "زمانبندی کافه:",
