@@ -65,17 +65,18 @@ const Address = () => {
           <span className="pl-2 text-[#13888C] font-bold">{t.phoneLabel}</span>{" "}
           {t.phone}
         </p>
-        <a href="https://www.instagram.com/emarat_aidin"></a>
-        <p
-          className={`text-sm sm:text-base md:text-lg lg:text-xl text-center ${
-            isFa ? "lg:text-right" : "lg:text-left"
-          }`}
-        >
-          <span className="pl-2 text-[#13888C] font-bold">
-            {t.instagramLabel}
-          </span>{" "}
-          {t.instagram}
-        </p>
+        <a href="https://www.instagram.com/emarat_aidin">
+          <p
+            className={`text-sm sm:text-base md:text-lg lg:text-xl text-center ${
+              isFa ? "lg:text-right" : "lg:text-left"
+            }`}
+          >
+            <span className="pl-2 text-[#13888C] font-bold">
+              {t.instagramLabel}
+            </span>{" "}
+            {t.instagram}
+          </p>
+        </a>
       </div>
     </div>
   );
