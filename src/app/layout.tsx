@@ -109,6 +109,7 @@ export default function RootLayout({
           name="google-site-verification"
           content="1VZgz9ZZXI3xl_O-GD6Rww9IPjzdETFFXx0SLx--xpA"
         />
+        <title>Aidin cafe</title>
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
